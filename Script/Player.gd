@@ -4,6 +4,7 @@ var speed = 100
 
 var player_state
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@export var inv: Inv
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -42,6 +43,8 @@ func play_anim(dir):
 func player():
 	pass
 
+func collect(item):
+	inv.insert(item)
 
 func _on_area_2d_body_entered(body):
 	pass # Replace with function body.
